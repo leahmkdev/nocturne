@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './home.css',
   templateUrl: './home.html',
 })
-export class Home {}
+export class Home {
+  backgroundImage = '/images/home-bg.jpg';
+  revealed = false;
+
+
+    onTaglineDone(event: AnimationEvent): void {
+      if (event.animationName === 'fade-out') return;
+      setTimeout(() => (this.revealed = true), 600);
+    }
+}

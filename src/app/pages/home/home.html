@@ -1,3 +1,9 @@
-<div class="home-wrapper">
-  <p>home works!</p>
+<div class="home-wrapper" [class.revealed]="revealed">
+
+  <div class="background-image" [style.background-image]="'url(' + backgroundImage + ')'"></div>
+
+  <h1 class="home-title">Nocturne</h1>
+
+  <h2 class="tagline" (animationend)="onTaglineDone($event)">Music after Dark</h2>
+
 </div>
