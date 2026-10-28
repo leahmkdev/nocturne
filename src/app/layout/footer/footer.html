@@ -1,1 +1,13 @@
-<p>footer works!</p>
+<footer class="footer-strip">
+  <a class="strip-link" href="/tickets" aria-label="Get tickets, October 23, October 24">
+    <div class="strip-track" aria-hidden="true">
+      @for (copy of [1, 2]; track copy) {
+        <div class="strip-group">
+          @for(i of items; track $index) {
+            <span>Get Tickets</span><span>Oct 24</span><span>Get Tickets</span><span>Oct 25</span>
+          }
+        </div>
+      }
+    </div>
+  </a>
+</footer>

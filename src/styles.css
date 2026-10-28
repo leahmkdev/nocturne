@@ -19,4 +19,5 @@ body, h1, h2, h3, h4, p, figure, blockquote {
   --color-secondary: #E8E0D5;
   --font-primary: 'Anton SC', sans-serif;
   --font-secondary: 'Space Grotesk', sans-serif;
+  --strip-height: 32px;
 }

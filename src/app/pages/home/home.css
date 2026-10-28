@@ -4,8 +4,10 @@
   --fade: 1.2s;
 
   position: relative;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
+  min-height: calc(100dvh - var(--strip-height));
   overflow: hidden;
+
 }
 
 .tagline {
@@ -80,4 +82,12 @@
   padding: 1rem 2rem;
   font-size: 1.2rem;
   z-index: 3;
+}
+
+@media (min-width: 768px){
+  .home-title {
+    top: 27%;
+    font-size: 8rem;
+    letter-spacing: .65rem;
+  }
 }
