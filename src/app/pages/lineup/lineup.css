@@ -1,0 +1,11 @@
+.lineup-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--nav-height);
+}
+
+@media (min-width: 768px) {
+  .lineup-wrapper {
+    margin-top: var(--nav-height);
+  }
+}

@@ -1,0 +1,8 @@
+<div class="toggle" role="group" aria-label="festival day" (click)="flip()">
+  @for (day of days; track day.id) {
+    <button type="button" [class.on]="day.id === value()" [attr.aria-pressed]="day.id === value()">
+      {{ day.label }}
+    </button>
+  }
+</div>
+

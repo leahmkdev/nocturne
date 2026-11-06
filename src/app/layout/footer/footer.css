@@ -1,6 +1,4 @@
 .footer-strip {
-  position: sticky;
-  bottom: 0;
   z-index: 10;
   height: var(--strip-height, 32px);
   overflow: hidden;
@@ -54,4 +52,11 @@
 
 @media(prefers-reduced-motion: reduce) {
   .strip-track { animation: none; }
+}
+
+:host {
+  display: block;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
 }

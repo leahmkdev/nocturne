@@ -20,4 +20,21 @@ body, h1, h2, h3, h4, p, figure, blockquote {
   --font-primary: 'Anton SC', sans-serif;
   --font-secondary: 'Space Grotesk', sans-serif;
   --strip-height: 32px;
+  --nav-height: 50px;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
 }
