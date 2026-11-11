@@ -10,6 +10,7 @@ interface Artist {
   genre: string;
   tier: 'headliner' | 'supporting' | 'opening';
   time: string;
+  billing: number;
 }
 
 @Component({
@@ -21,92 +22,118 @@ interface Artist {
 })
 export class Lineup {
   selectedDayId = signal<DayId>('fri');
+  private selectedArtistId = signal<string | null>(null);
 
   artists: Artist[] = [
      {
-      id: '0',
-      photo: 'vela-noir.jpg',
+      id: 'vela-noir',
+      photo: '/images/vela-noir.jpg',
       photoAlt: 'Vela Noir',
       name: 'Vela Noir',
       day: 'fri',
       genre: 'Alt R&B',
       tier: 'headliner',
-      time: '10:15 PM'
+      time: '10:15 PM',
+      billing: 1
     },
       {
-      id: '1',
-      photo: 'moth-club.jpg',
+      id: 'moth-club',
+      photo: '/images/moth-club.jpg',
       photoAlt: 'Moth Club',
       name: 'Moth Club',
       day: 'fri',
       genre: 'Indie Rock',
       tier: 'opening',
-      time: '9:00 PM'
+      time: '9:00 PM',
+      billing: 2
     },
     {
-      id: '2',
-      photo: 'solara.jpg',
+      id: 'solara',
+      photo: '/images/solara.jpg',
       photoAlt: 'Solara',
       name: 'Solara',
       day: 'fri',
       genre: 'Neo Soul',
       tier: 'supporting',
-      time: '7:00 PM'
+      time: '7:00 PM',
+      billing: 3
     },
 
     {
-      id: '3',
-      photo: 'jasper-tide.jpg',
+      id: 'jasper-tide',
+      photo: '/images/jasper-tide.jpg',
       photoAlt: 'Jasper Tide',
       name: 'Jasper Tide',
       day: 'fri',
       genre: 'Indie Rock',
       tier: 'supporting',
-      time: '8:00 PM'
+      time: '8:00 PM',
+      billing: 4
     },
     {
-      id: '4',
-      photo: 'the-velvet-hour.jpg',
+      id: 'the-velvet-hour',
+      photo: '/images/the-velvet-hour.jpg',
       photoAlt: 'The Velvet Hour',
       name: 'The Velvet Hour',
       day: 'sat',
       genre: 'Dream Pop',
       tier: 'headliner',
-      time: '10:15 PM'
+      time: '10:15 PM',
+      billing: 1
     },
       {
-      id: '5',
-      photo: 'mara-bloom.jpg',
+      id: 'mara-bloom',
+      photo: '/images/mara-bloom.jpg',
       photoAlt: 'Mara Bloom',
       name: 'Mara Bloom',
       day: 'sat',
       genre: 'Alternative',
       tier: 'opening',
-      time: '9:00 PM'
+      time: '9:00 PM',
+      billing: 2
     },
     {
-      id: '6',
-      photo: 'nova-8.jpg',
+      id: 'nova-8',
+      photo: '/images/nova-8.jpg',
       photoAlt: 'Nova/8',
       name: 'Nova/8',
       day: 'sat',
       genre: 'Electronic',
       tier: 'supporting',
-      time: '8:00 PM'
+      time: '8:00 PM',
+      billing: 3
     },
   {
-      id: '7',
-      photo: 'saint-sunday.jpg',
+      id: 'saint-sunday',
+      photo: '/images/saint-sunday.jpg',
       photoAlt: 'Saint Sunday',
       name: 'Saint Sunday',
       day: 'sat',
       genre: 'Indie',
       tier: 'supporting',
-      time: '7:00 PM'
+      time: '7:00 PM',
+      billing: 4
     }
   ]
 
-  visibleArtists = computed(() =>
-     this.artists.filter(a => a.day === this.selectedDayId()));
+  //filter the days artists
+  dayArtists = computed(() =>
+  this.artists.filter(a => a.day === this.selectedDayId())
+.sort((a, b) => a.billing - b.billing));
+
+  //select artist or first by default
+  active = computed(() => {
+    const dayList = this.dayArtists();
+    return dayList.find(a => a.id === this.selectedArtistId()) ?? dayList[0];
+  })
+
+  selectDay(day: DayId) {
+    this.selectedDayId.set(day);
+    this.selectedArtistId.set(null);
+  }
+
+  selectArtist(artistId: string) {
+    this.selectedArtistId.set(artistId);
+  }
 
 };

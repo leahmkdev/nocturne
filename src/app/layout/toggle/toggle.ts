@@ -15,7 +15,7 @@ export class Toggle {
   { id: 'sat', label: 'Sat Oct 25'},
  ];
 
-  value = model<string>();
+  value = model<DayId>('fri');
 
   flip() {
     this.value.update(v => (v === 'fri' ? 'sat' : 'fri'));
