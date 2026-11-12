@@ -7,6 +7,7 @@ interface Artist {
   photoAlt: string;
   name: string;
   day: DayId;
+  location: string;
   genre: string;
   tier: 'headliner' | 'supporting' | 'opening';
   time: string;
@@ -34,6 +35,7 @@ export class Lineup {
       genre: 'Alt R&B',
       tier: 'headliner',
       time: '10:15 PM',
+      location: 'Los Angeles',
       billing: 1
     },
       {
@@ -45,6 +47,7 @@ export class Lineup {
       genre: 'Indie Rock',
       tier: 'opening',
       time: '9:00 PM',
+      location: 'New York',
       billing: 2
     },
     {
@@ -55,7 +58,8 @@ export class Lineup {
       day: 'fri',
       genre: 'Neo Soul',
       tier: 'supporting',
-      time: '7:00 PM',
+      time: '8:00 PM',
+      location: 'Oakland',
       billing: 3
     },
 
@@ -67,18 +71,20 @@ export class Lineup {
       day: 'fri',
       genre: 'Indie Rock',
       tier: 'supporting',
-      time: '8:00 PM',
+      time: '7:00 PM',
+      location: 'Portland',
       billing: 4
     },
     {
-      id: 'the-velvet-hour',
-      photo: '/images/the-velvet-hour.jpg',
-      photoAlt: 'The Velvet Hour',
-      name: 'The Velvet Hour',
+      id: 'nova-8',
+      photo: '/images/nova-8.jpg',
+      photoAlt: 'NOVA/8',
+      name: 'NOVA/8',
       day: 'sat',
-      genre: 'Dream Pop',
+      genre: 'Electronic',
       tier: 'headliner',
       time: '10:15 PM',
+      location: 'Los Angeles',
       billing: 1
     },
       {
@@ -90,17 +96,19 @@ export class Lineup {
       genre: 'Alternative',
       tier: 'opening',
       time: '9:00 PM',
+      location: 'London',
       billing: 2
     },
     {
-      id: 'nova-8',
-      photo: '/images/nova-8.jpg',
-      photoAlt: 'Nova/8',
-      name: 'Nova/8',
+      id: 'the-velvet-hour',
+      photo: '/images/the-velvet-hour.jpg',
+      photoAlt: 'The Velvet Hour',
+      name: 'The Velvet Hour',
       day: 'sat',
-      genre: 'Electronic',
+      genre: 'Dream Pop',
       tier: 'supporting',
       time: '8:00 PM',
+      location: 'Seattle',
       billing: 3
     },
   {
@@ -112,6 +120,7 @@ export class Lineup {
       genre: 'Indie',
       tier: 'supporting',
       time: '7:00 PM',
+      location: 'Austin',
       billing: 4
     }
   ]
