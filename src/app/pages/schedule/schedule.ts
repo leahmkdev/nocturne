@@ -12,6 +12,7 @@ import { SCHEDULE } from '../../data/festival-data';
   templateUrl: './schedule.html',
 })
 export class Schedule {
+  backgroundImage = '/images/schedule-bg.jpg';
 
   protected readonly selectedDayId = inject(DayState).selected;
 

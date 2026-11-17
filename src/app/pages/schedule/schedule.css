@@ -2,6 +2,15 @@
   display: block;
 }
 
+.background-image {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+}
+
 .toggle-wrapper {
   display: flex;
   justify-content: center;
