@@ -1,1 +1,29 @@
-<p>schedule works!</p>
+<div class="schedule-wrapper">
+  <div class="toggle-wrapper">
+    <app-toggle [value]="selectedDayId()" (valueChange)="selectedDayId.set($event)" />
+  </div>
+
+  <section class="schedule">
+    <div class="section-head" aria-hidden="true">
+      <span>Time</span><span>Event</span><span>Location</span>
+    </div>
+
+    <ol class="event-slots">
+      @for(item of items(); track item.id) {
+        <li class="event-slot" [class.set]="!!item.artistId">
+          <time class="event-slot-time" [attr.datetime]="item.start">{{ item.start | clock }}</time>
+
+          @if (item.artistId) {
+            <a class="event-slot-name" routerLink="/lineup">{{ item.name }} <span aria-hidden="true">&rarr;</span></a>
+          } @else {
+            <span class="event-slot-name">{{ item.name }}</span>
+          }
+
+          <span class="event-slot-location"><span class="sr-only">Location: </span>{{ item.location }} </span>
+        </li>
+      } @empty {
+        <li class="empty">Schedule Coming Soon</li>
+      }
+    </ol>
+  </section>
+</div>

@@ -15,7 +15,7 @@
             (click)="selectArtist(artist.id)">
 
               <span class="artist-name">{{ artist.name }}</span>
-              <span class="artist-time">{{ artist.time }}</span>
+              <span class="artist-time">{{ artist.start | clock }}</span>
 
             </button>
 
