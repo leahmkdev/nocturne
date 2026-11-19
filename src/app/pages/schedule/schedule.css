@@ -3,8 +3,9 @@
 }
 
 .background-image {
-  position: absolute;
-  z-index: 0;
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
   inset: 0;
   background-size: cover;
   background-position: center;

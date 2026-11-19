@@ -2,7 +2,7 @@
 <div class="schedule-wrapper">
 
   <div class="toggle-wrapper">
-    <app-toggle [value]="selectedDayId()" (valueChange)="selectedDayId.set($event)" />
+    <app-toggle aria-label="festival day" [(value)]="selectedDayId" />
   </div>
 
   <section class="schedule">

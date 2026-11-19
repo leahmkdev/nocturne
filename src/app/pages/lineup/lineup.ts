@@ -29,10 +29,6 @@ export class Lineup {
     return dayList.find(a => a.id === this.selectedArtistId()) ?? dayList[0];
   })
 
-  selectDay(day: DayId) {
-    this.selectedDayId.set(day);
-    this.selectedArtistId.set(null);
-  }
 
   selectArtist(artistId: string) {
     this.selectedArtistId.set(artistId);

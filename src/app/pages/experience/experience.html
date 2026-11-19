@@ -1,1 +1,27 @@
-<p>experience works!</p>
+<div class="experience-wrapper">
+    <div class="experience-head">
+        <h1 tabindex="-1" data-in>The Experience</h1>
+    </div>
+
+    <section class="categories">
+        @for (c of categories; track c.id ) {
+            
+            <article class="category" data-in>
+                <h2 class="category-title"> {{ c.title }}</h2>
+                <p class="category-description">{{ c.description }}</p>
+
+                <ul class="category-highlights">
+                    @for( h of c.highlights; track h) {
+                        <li>{{ h }}</li>
+                    }
+                </ul>
+
+                @if (c.link; as link) {
+                    <a class="category-link" [routerLink]="link.path">
+                        {{ link.label }} <span aria-hidden="true">&rarr;</span>
+                    </a>
+                }
+            </article>
+        }
+    </section>
+</div>

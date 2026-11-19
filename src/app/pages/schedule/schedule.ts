@@ -1,4 +1,4 @@
-import { Component, computed, InjectableProvider, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { Toggle } from '../../layout/toggle/toggle';
 import { ClockPipe } from '../../data/clock-pipe';
 import { DayState } from '../../data/day-state';
